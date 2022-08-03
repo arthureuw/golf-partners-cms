@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "golf_clubs",
+  "info": {
+    "singularName": "golf-club",
+    "pluralName": "golf-clubs",
+    "displayName": "Golf club",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true
+    },
+    "subscriber": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "golf_club"
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}
